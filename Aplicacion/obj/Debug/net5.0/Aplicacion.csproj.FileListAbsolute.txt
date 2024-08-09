@@ -1,0 +1,17 @@
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Aplicacion.deps.json
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Aplicacion.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Aplicacion.pdb
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Dominio.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Persistencia.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Dominio.pdb
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\bin\Debug\net5.0\Persistencia.pdb
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.csproj.AssemblyReference.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.AssemblyInfoInputs.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.AssemblyInfo.cs
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.csproj.CoreCompileInputs.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.csproj.CopyComplete
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\refint\Aplicacion.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.pdb
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\ref\Aplicacion.dll
