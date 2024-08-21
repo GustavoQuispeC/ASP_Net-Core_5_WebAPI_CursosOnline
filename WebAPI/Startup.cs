@@ -1,3 +1,5 @@
+using Aplicacion.Cursos;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,9 @@ namespace WebAPI
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            // Se agrega el servicio de MediatR para la implementación del patrón CQRS
+            services.AddMediatR(typeof(Consulta.Manejador).Assembly);
 
 
 
