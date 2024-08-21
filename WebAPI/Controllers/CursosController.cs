@@ -2,6 +2,7 @@
 using Dominio;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,6 +37,18 @@ namespace WebAPI.Controllers
             return await _mediator.Send(data);
         }
 
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult<Unit>> Editar(int id, Editar.Ejecuta data)
+        //{
+        //    data.CursoId = Guid.Parse(id.ToString());
+        //    return await _mediator.Send(data);
+        //}
+
+        [HttpDelete]
+        public async Task<ActionResult<Unit>> Eliminar(Guid id)
+        {
+            return await _mediator.Send(new Eliminar.Ejecuta { Id = id });
+        }
        
     }
 }
