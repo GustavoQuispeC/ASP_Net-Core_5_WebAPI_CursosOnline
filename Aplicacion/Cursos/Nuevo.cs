@@ -1,7 +1,9 @@
 ﻿using Dominio;
+using FluentValidation;
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,11 +14,24 @@ namespace Aplicacion.Cursos
     {
         public class Ejecuta : IRequest
         {
+            
             public string Titulo { get; set; }
             public string Descripcion { get; set; }
             public DateTime? FechaPublicacion { get; set; }
         }
 
+        //aplicamos validaciones con FluentValidation
+        public class EjecutaValidacion : AbstractValidator<Ejecuta>
+        {
+            public EjecutaValidacion()
+            {
+                RuleFor(x => x.Titulo).NotEmpty();
+                RuleFor(x => x.Descripcion).NotEmpty();
+                RuleFor(x => x.FechaPublicacion).NotEmpty();
+            }
+        }
+
+        //usamos mediaTR para manejar la lógica de negocio
         public class Manejador : IRequestHandler<Ejecuta>
         {
             private readonly CursosOnlineContext _context;
@@ -31,7 +46,7 @@ namespace Aplicacion.Cursos
                 {
                     Titulo = request.Titulo,
                     Descripcion = request.Descripcion,
-                    FechaPublicacion = (DateTime)request.FechaPublicacion
+                    FechaPublicacion = request.FechaPublicacion
                 };
                 _context.Curso.Add(curso);
                 var valor = await _context.SaveChangesAsync();

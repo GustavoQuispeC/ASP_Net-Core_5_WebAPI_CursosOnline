@@ -1,9 +1,9 @@
-﻿using MediatR;
+﻿using Aplicacion.ManejadorError;
+using FluentValidation;
+using MediatR;
 using Persistencia;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,6 +19,19 @@ namespace Aplicacion.Cursos
             public DateTime? FechaPublicacion { get; set; }
         }
 
+        //aplicamos validaciones con FluentValidation
+        public class EjecutaValidacion : AbstractValidator<Ejecuta>
+        {
+            public EjecutaValidacion()
+            {
+
+                RuleFor(x => x.Titulo).NotEmpty();
+                RuleFor(x => x.Descripcion).NotEmpty();
+                RuleFor(x => x.FechaPublicacion).NotEmpty();
+            }
+        }
+
+
         public class Manejador : IRequestHandler<Ejecuta>
         {
             private readonly CursosOnlineContext _context;
@@ -33,7 +46,11 @@ namespace Aplicacion.Cursos
                 var curso = await _context.Curso.FindAsync(request.CursoId);
                 if(curso == null)
                 {
-                    throw new Exception("No se encontro el curso");
+                    //throw new Exception("No se encontro el curso");
+
+                    //implementamos el manejador de excepciones personalizado
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { mensaje = "No se encontro el curso" });
+
                 }
                 curso.Titulo = request.Titulo ?? curso.Titulo;
                 curso.Descripcion = request.Descripcion ?? curso.Descripcion;
