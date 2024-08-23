@@ -40,9 +40,12 @@ namespace WebAPI.Controllers
         //[HttpPut("{id}")]
         //public async Task<ActionResult<Unit>> Editar(int id, Editar.Ejecuta data)
         //{
-        //    data.CursoId = Guid.Parse(id.ToString());
+
+        //data.CursoId = Guid.Parse(id.ToString());
         //    return await _mediator.Send(data);
+
         //}
+
 
         [HttpDelete]
         public async Task<ActionResult<Unit>> Eliminar(Guid id)

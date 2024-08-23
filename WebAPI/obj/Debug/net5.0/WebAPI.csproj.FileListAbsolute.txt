@@ -1,3 +1,10 @@
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.csproj.AssemblyReference.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfoInputs.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfo.cs
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\appsettings.Development.json
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\appsettings.json
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\WebAPI.exe
@@ -18,6 +25,9 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\MediatR.dl
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\MediatR.Contracts.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -25,6 +35,8 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.Identity.Client.dll
@@ -68,13 +80,6 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Persistenc
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Aplicacion.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Dominio.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Persistencia.pdb
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.csproj.AssemblyReference.cache
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfoInputs.cache
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfo.cs
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CoreCompileInputs.cache
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\staticwebassets\WebAPI.StaticWebAssets.xml
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\scopedcss\bundle\WebAPI.styles.css
@@ -85,3 +90,5 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\refint\Web
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Humanizer.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
