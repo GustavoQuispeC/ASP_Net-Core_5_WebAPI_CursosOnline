@@ -9,4 +9,4 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\obj\Debug\net5.0\Dominio.c
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\obj\Debug\net5.0\Dominio.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\obj\Debug\net5.0\Dominio.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\obj\Debug\net5.0\ref\Dominio.dll
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\bin\Debug\net5.0\ref\Dominio.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Dominio\obj\Debug\net5.0\refint\Dominio.dll

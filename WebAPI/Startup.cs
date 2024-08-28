@@ -33,6 +33,8 @@ namespace WebAPI
             services.AddDbContext<CursosOnlineContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
+
             
 
 
@@ -54,7 +56,7 @@ namespace WebAPI
 
             //gestiona las operaciones de inicio de sesión
             identityBuilder.AddSignInManager<SignInManager<Usuario>>();
-
+            //gestiona las operaciones de usuario
             services.TryAddSingleton<ISystemClock, SystemClock>();
 
 
@@ -78,6 +80,7 @@ namespace WebAPI
 
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
+
             }
 
             app.UseHttpsRedirection();
