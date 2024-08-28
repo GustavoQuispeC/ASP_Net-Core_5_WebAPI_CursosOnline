@@ -1,13 +1,18 @@
 using Aplicacion.Cursos;
+using Dominio;
 using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Persistencia;
 using WebAPI.Middleware;
 
 namespace WebAPI
@@ -25,10 +30,11 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             // Se agrega el contexto de la base de datos
-            services.AddDbContext<Persistencia.CursosOnlineContext>(opt =>
-            {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+            services.AddDbContext<CursosOnlineContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            
+
 
             // Se agrega el servicio de MediatR para la implementación del patrón CQRS
             services.AddMediatR(typeof(Consulta.Manejador).Assembly);
@@ -36,9 +42,23 @@ namespace WebAPI
 
             //agregamos fluent validation para las validaciones
             //services.AddControllers();
-            IMvcBuilder mvcBuilder = services.AddControllers().AddFluentValidation(
-                cfg =>cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
 
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
+           
+            // Se agrega el servicio de Identity
+            var builder = services.AddIdentityCore<Usuario>();
+            var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+
+            //habilitamos la autenticacion del usuario por medio de un token
+            identityBuilder.AddEntityFrameworkStores<CursosOnlineContext>();
+
+            //gestiona las operaciones de inicio de sesión
+            identityBuilder.AddSignInManager<SignInManager<Usuario>>();
+
+            services.TryAddSingleton<ISystemClock, SystemClock>();
+
+
+            // usamos swagger para documentar la API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });

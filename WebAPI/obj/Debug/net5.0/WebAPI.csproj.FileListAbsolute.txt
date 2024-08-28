@@ -86,9 +86,9 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\scopedcss\
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.RazorTargetAssemblyInfo.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CopyComplete
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.dll
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\refint\WebAPI.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Humanizer.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\refint\WebAPI.dll

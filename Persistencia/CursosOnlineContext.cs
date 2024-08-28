@@ -1,19 +1,21 @@
 ﻿using Dominio;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace Persistencia
 {
-    public class CursosOnlineContext : DbContext
+    public class CursosOnlineContext : IdentityDbContext<Usuario>
     {
-        public CursosOnlineContext(DbContextOptions options) : base(options)
+        public CursosOnlineContext(DbContextOptions<CursosOnlineContext> options) : base(options)
         {
         }
 
         // Crear las tablas en la base de datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //indicando que la tabla Curso tiene una llave primaria compuesta
+            base.OnModelCreating(modelBuilder);
+
+            // Indicando que la tabla CursoInstructor tiene una llave primaria compuesta
             modelBuilder.Entity<CursoInstructor>().HasKey(ci => new { ci.InstructorId, ci.CursoId });
         }
 
@@ -22,6 +24,7 @@ namespace Persistencia
         public DbSet<CursoInstructor> CursoInstructor { get; set; }
         public DbSet<Instructor> Instructor { get; set; }
         public DbSet<Precio> Precio { get; set; }
-        
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
+

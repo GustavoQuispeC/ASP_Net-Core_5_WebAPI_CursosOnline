@@ -12,6 +12,6 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplica
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.csproj.CoreCompileInputs.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.csproj.CopyComplete
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.dll
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\refint\Aplicacion.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\Aplicacion.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\ref\Aplicacion.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Aplicacion\obj\Debug\net5.0\refint\Aplicacion.dll
