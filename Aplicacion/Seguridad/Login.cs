@@ -1,5 +1,4 @@
-﻿using Aplicacion.Contratos;
-using Aplicacion.ManejadorError;
+﻿using Aplicacion.ManejadorError;
 using Dominio;
 using FluentValidation;
 using MediatR;
@@ -33,14 +32,12 @@ namespace Aplicacion.Seguridad
         {
             private readonly UserManager<Usuario> _userManager;
             private readonly SignInManager<Usuario> _signInManager;
-            private readonly IJwtGenerador _jwtGenerador;
 
             //inyeccion de dependencias para el login
-            public Manejador(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, IJwtGenerador jwtGenerador)
+            public Manejador(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager)
             {
                 _userManager = userManager;
                 _signInManager = signInManager;
-                _jwtGenerador = jwtGenerador;
             }
 
             //metodo para el login del usuario con validaciones
@@ -58,7 +55,7 @@ namespace Aplicacion.Seguridad
                     return new UsuarioData
                     {
                         NombreCompleto = usuario.NombreCompleto,
-                        Token = _jwtGenerador.CrearToken(usuario),
+                        Token = "Este es el token",
                         UserName = usuario.UserName,
                         Email = usuario.Email,
                         Imagen = null

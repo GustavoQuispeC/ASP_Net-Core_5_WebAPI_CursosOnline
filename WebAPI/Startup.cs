@@ -4,18 +4,14 @@ using Dominio;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistencia;
 using Seguridad.TokenSeguridad;
@@ -39,6 +35,11 @@ namespace WebAPI
             services.AddDbContext<CursosOnlineContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
+
+            
+
+
             // Se agrega el servicio de MediatR para la implementación del patrón CQRS
             services.AddMediatR(typeof(Consulta.Manejador).Assembly);
 
@@ -46,14 +47,7 @@ namespace WebAPI
             //agregamos fluent validation para las validaciones
             //services.AddControllers();
 
-            services.AddControllers(opt =>
-            {
-                // Se agrega la política de autorización por defecto para todos los endpoints
-                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-                opt.Filters.Add(new AuthorizeFilter(policy));
-            })
-                // Se agrega el uso de FluentValidation para las validaciones de los dtos
-                .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
            
             // Se agrega el servicio de Identity
             var builder = services.AddIdentityCore<Usuario>();
@@ -70,22 +64,6 @@ namespace WebAPI
             // Se agrega la configuración jwt para la autenticación
             services.AddScoped<IJwtGenerador, JwtGenerador>();
 
-            // Se agrega la configuración de autenticación con jwt
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    //validamos el emisor del token
-                    ValidateIssuerSigningKey = true,
-                    //validamos la clave del token
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes("Mi palabra secreta")),
-
-                    //no se enviara el token por https
-                    ValidateIssuer = false,
-                    //token global para la autenticacion
-                    ValidateAudience = false
-                };
-            });
 
             // usamos swagger para documentar la API
             services.AddSwaggerGen(c =>
@@ -110,8 +88,7 @@ namespace WebAPI
 
             }
 
-           //pp.UseHttpsRedirection();
-            app.UseAuthentication();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
