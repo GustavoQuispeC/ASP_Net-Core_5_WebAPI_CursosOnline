@@ -1,3 +1,4 @@
+using Aplicacion.Contratos;
 using Aplicacion.Cursos;
 using Dominio;
 using FluentValidation.AspNetCore;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Persistencia;
+using Seguridad.TokenSeguridad;
 using WebAPI.Middleware;
 
 namespace WebAPI
@@ -58,6 +60,9 @@ namespace WebAPI
             identityBuilder.AddSignInManager<SignInManager<Usuario>>();
             //gestiona las operaciones de usuario
             services.TryAddSingleton<ISystemClock, SystemClock>();
+
+            // Se agrega la configuración jwt para la autenticación
+            services.AddScoped<IJwtGenerador, JwtGenerador>();
 
 
             // usamos swagger para documentar la API
