@@ -92,3 +92,5 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\ref\WebAPI
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Humanizer.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\obj\Debug\net5.0\refint\WebAPI.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Seguridad.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\WebAPI\bin\Debug\net5.0\Seguridad.pdb
