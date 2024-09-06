@@ -64,6 +64,14 @@ namespace WebAPI
             // Se agrega la configuración jwt para la autenticación
             services.AddScoped<IJwtGenerador, JwtGenerador>();
 
+            // Se agrega el servicio de autenticación para obtener el usuario actual
+            services.AddScoped<IUsuarioSesion, UsuarioSesion>();
+
+           
+            // se agrega el servicio de automapper
+            services.AddAutoMapper(typeof(Consulta.Manejador));
+
+
 
             // usamos swagger para documentar la API
             services.AddSwaggerGen(c =>
@@ -91,6 +99,8 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

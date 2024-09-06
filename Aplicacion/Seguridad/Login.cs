@@ -59,7 +59,7 @@ namespace Aplicacion.Seguridad
                     {
                         NombreCompleto = usuario.NombreCompleto,
                        Token = _jwtGenerador.CrearToken(usuario),
-                        UserName = usuario.UserName,
+                        Username = usuario.UserName,
                         Email = usuario.Email,
                         Imagen = null
 

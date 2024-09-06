@@ -12,7 +12,7 @@ D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Pers
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CoreCompileInputs.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Persistencia.csproj.CopyComplete
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Persistencia.dll
+D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Persistencia.pdb
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\Persistencia.genruntimeconfig.cache
 D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
-D:\Documentos\Curso .Net\ASP_NetCore_WebAPI_5\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
