@@ -14,6 +14,7 @@ namespace Aplicacion.Cursos
         public class Ejecuta : IRequest
         {
             public Guid Id { get; set; }
+
         }
         public class Manejador : IRequestHandler<Ejecuta>
         {
@@ -43,6 +44,21 @@ namespace Aplicacion.Cursos
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { mensaje = "No se encontro el curso" });
                 }
                 _context.Remove(curso);
+
+                //eliminar comentarios del curso
+                var comentariosDB = _context.Comentario.Where(x => x.CursoId == request.Id);
+                foreach (var comentario in comentariosDB)
+                {
+                    _context.Comentario.Remove(comentario);
+                }
+
+                //eliminar precio del curso
+                var precioDB = _context.Precio.Where(x => x.CursoId == request.Id).FirstOrDefault();
+                if (precioDB != null)
+                {
+                    _context.Precio.Remove(precioDB);
+                }
+
 
                 var resultado = await _context.SaveChangesAsync();
                 if (resultado > 0)

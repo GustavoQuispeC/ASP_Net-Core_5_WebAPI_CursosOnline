@@ -22,6 +22,10 @@ namespace Aplicacion.Cursos
             public DateTime? FechaPublicacion { get; set; }
             
             public List<Guid> ListaInstructor { get; set; }
+
+            public decimal? Precio { get; set; }
+
+            public decimal? Promocion { get; set; }
         }
 
         //aplicamos validaciones con FluentValidation
@@ -47,7 +51,7 @@ namespace Aplicacion.Cursos
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                
+                //Actualizar curso
                 var curso = await _context.Curso.FindAsync(request.CursoId);
                 if(curso == null)
                 {
@@ -61,6 +65,28 @@ namespace Aplicacion.Cursos
                 curso.Descripcion = request.Descripcion ?? curso.Descripcion;
                 curso.FechaPublicacion = request.FechaPublicacion ?? curso.FechaPublicacion;
 
+                //Actualizar precio del curso
+                var precioEntidad = _context.Precio.Where(x => x.CursoId == curso.CursoId).FirstOrDefault();
+                if(precioEntidad != null)
+                {
+                    precioEntidad.PrecioActual = request.Precio?? precioEntidad.PrecioActual;
+                    precioEntidad.Promocion = request.Promocion?? precioEntidad.Promocion;
+                }
+                else
+                {
+                    precioEntidad = new Precio
+                    {
+                        PrecioId = Guid.NewGuid(),
+                        PrecioActual = request.Precio?? 0,
+                        Promocion = request.Promocion?? 0,
+                        CursoId = curso.CursoId
+                    };
+                    await _context.Precio.AddAsync(precioEntidad);
+                }
+               
+
+            
+                //Actualizar instructores del curso
                 if(request.ListaInstructor != null)
                 {
                     if(request.ListaInstructor.Count > 0)
