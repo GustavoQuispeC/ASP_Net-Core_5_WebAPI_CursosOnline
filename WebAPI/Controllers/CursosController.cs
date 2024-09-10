@@ -34,16 +34,16 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Unit>> Editar(int id, Editar.Ejecuta data)
+        public async Task<ActionResult<Unit>> Editar(Guid id, Editar.Ejecuta data)
         {
 
-            data.CursoId = Guid.Parse(id.ToString());
+            data.CursoId = id;
             return await Mediator.Send(data);
 
         }
 
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<Unit>> Eliminar(Guid id)
         {
             return await Mediator.Send(new Eliminar.Ejecuta { Id = id });

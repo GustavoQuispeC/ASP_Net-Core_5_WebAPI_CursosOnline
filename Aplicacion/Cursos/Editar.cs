@@ -1,8 +1,11 @@
 ﻿using Aplicacion.ManejadorError;
+using Dominio;
 using FluentValidation;
 using MediatR;
 using Persistencia;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +20,8 @@ namespace Aplicacion.Cursos
             public string Titulo { get; set; }
             public string Descripcion { get; set; }
             public DateTime? FechaPublicacion { get; set; }
+            
+            public List<Guid> ListaInstructor { get; set; }
         }
 
         //aplicamos validaciones con FluentValidation
@@ -55,6 +60,30 @@ namespace Aplicacion.Cursos
                 curso.Titulo = request.Titulo ?? curso.Titulo;
                 curso.Descripcion = request.Descripcion ?? curso.Descripcion;
                 curso.FechaPublicacion = request.FechaPublicacion ?? curso.FechaPublicacion;
+
+                if(request.ListaInstructor != null)
+                {
+                    if(request.ListaInstructor.Count > 0)
+                    {
+                        //Eliminar instructores actuales 
+                        var instructoresDB = _context.CursoInstructor.Where(x => x.CursoId == request.CursoId);
+                        foreach (var instructorEliminar in instructoresDB)
+                        {
+                            _context.CursoInstructor.Remove(instructorEliminar);
+                        }
+
+                        //Agregar los nuevos instructores
+                        foreach (var id in request.ListaInstructor)
+                        {
+                            _context.CursoInstructor.Add(new CursoInstructor
+                            {
+                                CursoId = request.CursoId,
+                                InstructorId = id
+                            });
+                        }
+                        
+                    }   
+                }   
 
                 var resultado = await  _context.SaveChangesAsync();
                 if(resultado > 0)

@@ -19,6 +19,9 @@ namespace Aplicacion
 
             CreateMap<CursoInstructor, CursoInstructorDto>();
             CreateMap<Instructor,InstructorDto>();
+
+            CreateMap<Comentario, ComentarioDto>();
+            CreateMap<Precio, PrecioDto>();
             
             
            
