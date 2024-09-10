@@ -21,6 +21,10 @@ namespace Aplicacion.Cursos
 
             //sera una lista de Guid que contendrá los instructores
             public List<Guid> ListaInstructor { get; set; }
+
+            public decimal Precio { get; set; }
+
+            public decimal Promocion { get; set; }
         }
 
         //aplicamos validaciones con FluentValidation
@@ -31,6 +35,7 @@ namespace Aplicacion.Cursos
                 RuleFor(x => x.Titulo).NotEmpty();
                 RuleFor(x => x.Descripcion).NotEmpty();
                 RuleFor(x => x.FechaPublicacion).NotEmpty();
+                
             }
         }
 
@@ -53,7 +58,7 @@ namespace Aplicacion.Cursos
                     CursoId = _cursoId,
                     Titulo = request.Titulo,
                     Descripcion = request.Descripcion,
-                    FechaPublicacion = request.FechaPublicacion
+                    FechaPublicacion = request.FechaPublicacion,
                 };
                 _context.Curso.Add(curso);
 
@@ -69,7 +74,17 @@ namespace Aplicacion.Cursos
                         };
                         _context.CursoInstructor.Add(cursoInstructor);
                     }
-                }   
+                }  
+                
+                //agregamos el precio al curso
+                var precioEntidad = new Precio
+                {
+                    PrecioId = Guid.NewGuid(),
+                    PrecioActual = request.Precio,
+                    Promocion = request.Promocion,
+                    CursoId = _cursoId
+                };
+                _context.Precio.Add(precioEntidad);
 
                 var valor = await _context.SaveChangesAsync();
                 if(valor > 0)

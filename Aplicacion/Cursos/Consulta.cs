@@ -33,6 +33,8 @@ namespace Aplicacion.Cursos
                 var cursos = await _context.Curso
                     .Include(x=>x.InstructoresLink)
                     .ThenInclude(x=>x.Instructor)
+                    .Include(x=>x.ComentarioLista)
+                    .Include(x=>x.PrecioPromocion)
                     .ToListAsync();
 
                 //Mapeo de la lista de cursos a una lista de CursoDto
@@ -40,6 +42,8 @@ namespace Aplicacion.Cursos
 
                 return cursosDto;
             }
+
+
         }
 
 
