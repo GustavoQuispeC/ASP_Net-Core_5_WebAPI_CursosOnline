@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Persistencia;
+using Persistencia.DapperConexion;
+using Persistencia.DapperConexion.Instructor;
 using Seguridad.TokenSeguridad;
 using WebAPI.Middleware;
 
@@ -33,8 +35,11 @@ namespace WebAPI
         {
             // Se agrega el contexto de la base de datos
             services.AddDbContext<CursosOnlineContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            // usando Dapper para la conexión a la base de datos
+            services.AddOptions();
+            services.Configure<ConexionConfiguracion>(Configuration.GetSection("ConnectionStrings"));
 
 
             
@@ -79,6 +84,12 @@ namespace WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service Mantenimiento de cursos", Version = "v1" });
                 c.CustomSchemaIds(x => x.FullName);
             });
+
+            //implementamos servicio de conexion a la base de datos con Dapper
+            services.AddTransient<IFactoryConnection, FactoryConnection>();
+
+            //implementamos el servicio de instructor
+            services.AddScoped<IInstructor, InstructorRepositorio>();
            
         }
 
