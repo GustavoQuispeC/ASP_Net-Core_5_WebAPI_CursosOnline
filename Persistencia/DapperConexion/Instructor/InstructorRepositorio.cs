@@ -17,19 +17,69 @@ namespace Persistencia.DapperConexion.Instructor
             _factoryConnection = factoryConnection;
         }
 
-        public Task<int> Actualizar(InstructorModel parametros)
+        public async Task<int> Actualizar(Guid instructorId,string nombre, string apellidos, string grado)
+        {
+           var storeProcedure = "usp_Instructor_Editar";
+            try
+            {
+                var connection = _factoryConnection.GetConnection();
+                var resultado = await connection.ExecuteAsync(storeProcedure, new
+                {
+                    InstructorId  = instructorId,
+                    Nombre = nombre,
+                    Apellidos = apellidos,
+                    Grado = grado
+                    
+                },
+                commandType: CommandType.StoredProcedure
+                               );
+                _factoryConnection.CloseConnection();
+                return resultado;
+               
+            }
+            catch (Exception e)
+            {
+                throw new Exception("No se pudo editar el instructor", e);
+            }
+            finally
+            {
+                _factoryConnection.CloseConnection();
+            }
+        }
+
+        public Task<int> Eliminar(Guid id)                                                                                                                                                  
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> Eliminar(Guid id)
+        public async Task<int> Nuevo(string nombre, string apellidos, string grado)                                                                                 
         {
-            throw new NotImplementedException();
-        }
+            var storeProcedure = "usp_Instructor_Nuevo";
+           
+            try
+            {
+                var connection = _factoryConnection.GetConnection();
+                var  resultado = await connection.ExecuteAsync(storeProcedure,new
+                {
+                    InstructorId = Guid.NewGuid(),
+                    Nombre = nombre,
+                    Apellidos = apellidos,
+                    Grado = grado,
 
-        public Task<int> Nuevo(InstructorModel parametros)
-        {
-            throw new NotImplementedException();
+                },
+                commandType: CommandType.StoredProcedure
+                );
+                _factoryConnection.CloseConnection();
+                return resultado;
+                
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception("No se pudo guardar el instructor", e);
+            }
+           
+            
         }
 
         public async Task<IEnumerable<InstructorModel>> ObtenerLista()
