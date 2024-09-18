@@ -34,6 +34,18 @@ namespace WebAPI.Controllers
             data.InstructorId = id;
             return await Mediator.Send(data);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<InstructorModel>> ObtenerPorId(Guid id)
+        {
+            return await Mediator.Send(new ConsultaId.InstructorUnico { Id = id });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(Guid id)
+        {
+            return await Mediator.Send(new Eliminar.Ejecuta { Id = id });
+        }
       
     }
 }

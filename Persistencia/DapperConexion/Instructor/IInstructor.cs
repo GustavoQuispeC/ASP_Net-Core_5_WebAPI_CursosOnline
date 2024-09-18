@@ -15,6 +15,7 @@ namespace Persistencia.DapperConexion.Instructor
         Task<int>Nuevo(string nombre, string apellidos, string grado);
 
         Task<int> Actualizar(Guid instructorId, string nombre, string apellidos, string grado);
+        
         Task<int> Eliminar(Guid id);
 
 
